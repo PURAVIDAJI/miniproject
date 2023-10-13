@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Yeon+Sung&display=swap');
+
+body{
+
+  background-color: #f6f6f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Nanum Pen Script";
+  min-height: 100vh;
+  margin :0px
+
+
+}
+
+@media(min-width : 650px){
+  .App{
+    width: 1200px;
+  }
+}
+
+@media(max-width : 650px){
+  .App{
+    width: 90vw;
+  }
+}
+
+#root{
+  background-color: white;
+  box-shadow: rgba(100,100,111,0.2) 0px 7px 29px 0px;
+}
+
+.App{
+  min-height: 100vh;
+  /* padding-left :20px;
+  padding-right: 20px; */
+}
+
+
+.custom-carousel {
+    width: 1200px;
+    height: 400px;
+  }
+
+/* MyButton */
+/* .MyButton{
+  cursor: pointer;
+  border: none;
+  border-radius: 5px ;
+
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  white-space: nowrap;
+  font-family: "Nanum Pen Script";
+} */
+
+/* .MyButton_default{
+  background-color: #ececec;
+  color: black
+
+}
+
+.MyButton_positive{
+  background-color: #64c964;
+  color: white;
+
+}
+.MyButton_negative{
+  background-color: #fd565f;
+  color:white;
+
+} */
+
+
+
+
