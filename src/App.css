@@ -249,6 +249,7 @@ header .head_btn_left{
 header .head_btn_right{
   width: 25%;
   justify-content: end;
+  font-size: 18px;
 }
 
 /* VolunteerEditior */
@@ -396,3 +397,94 @@ font-size: 20px;
   color: white;
 }
 
+/* Detail */
+
+.DetailPage{
+
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+
+}
+
+.DetailPage section{
+  width: 100%;
+  margin-bottom: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+}
+
+.DetailPage h4{
+  margin-top: 20px;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Nanum Pen Script";
+}
+
+.DetailPage .category_img_wrapper {
+  background-image: #ececec;
+  width: 250px;
+  height: 250px;
+  
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.DetailPage .category_img_wrapper_1{
+  background-color: #64c964;
+}
+
+.DetailPage .category_img_wrapper_2{
+  background-color: #FFB54C;
+}
+
+.DetailPage .category_img_wrapper_3{
+  background-color: #FFFF00;
+}
+
+.DetailPage .category_img_wrapper_4{
+  background-color: #FF4A6E;
+}
+
+.DetailPage .category_img_wrapper_5{
+  background-color: #A374DB;
+}
+
+.DetailPage .category_img_wrapper_6{
+  background-color: #000080;
+}
+.DetailPage .img{
+  width: 150px;
+  height: 150px;
+}
+
+.DetailPage .category_description{
+  font-size: 25px;
+  color: white;
+  font-family: "Nanum Pen Script";
+}
+
+.DetailPage .volunteer_date_wrapper,
+ .volunteer_con_wrapper,
+ .volunteer_loc_wrapper{
+  width: 100%;
+
+  background-color: #ececec;
+  border-radius: 5px ;
+  display: flex;
+  align-items: center;
+}
+.DetailPage .volunteer_date_wrapper p,
+.volunteer_loc_wrapper p,
+.volunteer_con_wrapper p {
+  
+  text-align: left;
+  margin: 10px;
+}

@@ -49,6 +49,7 @@ const dummyData = [
     content: "첫번째 봉사활동",
     date: 1697163411272,
     location: "상록보육원",
+    
 
   },
   {
