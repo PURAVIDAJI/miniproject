@@ -1,8 +1,8 @@
-const Detail =() =>{
+const Detail = () => {
     return (
         <div>
-            <h1>Edit</h1>
-            <p>이곳은 수정화면 입니다.</p>
+            <h1>Detail</h1>
+            <p>이곳은 상세화면 입니다.</p>
         </div>
     )
 }

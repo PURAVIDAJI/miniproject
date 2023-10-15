@@ -1,4 +1,4 @@
-const Edit =() =>{
+const Edit = () => {
     return (
         <div>
             <h1>Edit</h1>

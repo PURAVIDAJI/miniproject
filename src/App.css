@@ -2,7 +2,7 @@
 
 body{
 
-  background-color: #f6f6f6;
+  background-color: #ececec;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,13 +37,10 @@ body{
 }
 
 
-.custom-carousel {
-    width: 1200px;
-    height: 400px;
-  }
+
 
 /* MyButton */
-/* .MyButton{
+.MyButton{
   cursor: pointer;
   border: none;
   border-radius: 5px ;
@@ -55,10 +52,10 @@ body{
   padding-right: 20px;
 
   white-space: nowrap;
-  font-family: "Nanum Pen Script";
-} */
+  /* font-family: "Nanum Pen Script"; */
+} 
 
-/* .MyButton_default{
+.MyButton_default{
   background-color: #ececec;
   color: black
 
@@ -73,8 +70,329 @@ body{
   background-color: #fd565f;
   color:white;
 
-} */
+}
+
+
+/* VolunteerList */
+.VolunteerList{
+    width: 100%; /* Take up the full width of the container */
+  max-width: 1000px; /* Maximum width of 1000px */
+  margin: 0 auto; /* Center align horizontally */
+ 
+  
+  
+   
+    
+}
+.VolunteerList .menu_wrapper{
+    margin-top: 20px;
+    margin-bottom: 30px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.VolunteerList .ControlMenu{
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ececec;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left:20px ;
+    padding-right:20px ;
+
+    cursor: pointer;
+    font-size: 20px;
 
 
 
+}
+
+.VolunteerList .item{
+   
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+
+   gap:20px;
+ 
+
+}
+
+/* VolunteerItem */
+.VolunteerItem{
+    
+    
+    
+    padding-bottom: 15px;
+    
+    
+    
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+}
+
+.VolunteerItem .category_img_wrapper{
+    cursor: pointer;
+    min-width: 120px;
+    height: 170px;
+
+   
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+}
+
+.VolunteerItem .category_img_wrapper_1{
+    background-color: #64c964;
+}
+
+.VolunteerItem .category_img_wrapper_2{
+  background-color: #FFB54C;
+}
+.VolunteerItem .category_img_wrapper_3{
+  background-color: #FFFF00;
+}
+.VolunteerItem .category_img_wrapper_4{
+  background-color: #FF4A6E;
+}
+.VolunteerItem .category_img_wrapper_5{
+  background-color:#A374DB;
+}
+.VolunteerItem .category_img_wrapper_6{
+  background-color: #000080;
+}
+.VolunteerItem .info_wrapper{
+    
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid #e2e2e2;
+    border-bottom: 1px solid #e2e2e2;
+   
+    cursor: pointer;
+    text-align: center;
+
+}
+
+.VolunteerItem .volunteer_date{
+    font-weight: bold;
+    font-size: 35px;
+    font-family: "Nanum Pen Script";
+}
+
+.VolunteerItem .volunteer_title{
+    font-size: 25px;
+    font-family: "Nanum Pen Script";
+
+
+}
+
+.VolunteerItem .volunteer_content_preview{
+    font-size: 20px;
+    
+    font-family: "Yeon Sung";
+
+}
+
+.VolunteerItem .btn_wrapper{
+
+    min-width: 70px;
+    margin-top: 15px;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+}
+
+
+/* Header */
+header{
+
+  width: 100%; /* Take up the full width of the container */
+  max-width: 1000px; /* Maximum width of 1000px */
+  margin: 0 auto;
+ 
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  display: flex;
+  
+  align-items: center;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+header >div{
+  display:flex ;
+  font-family: "Nanum Pen Script";
+}
+
+header .head_text{
+  width: 50%;
+  font-size: 30px;
+  font-weight: bold;
+  justify-content: center;
+}
+
+header .head_btn_left{
+  width: 25%;
+  justify-content: start;
+  font-size: 18px;
+}
+
+header .head_btn_right{
+  width: 25%;
+  justify-content: end;
+}
+
+/* VolunteerEditior */
+.VolunteerEditior {
+  
+}
+
+.VolunteerEditior section {
+  margin-bottom: 40px;
+  
+  width: 100%; /* Take up the full width of the container */
+  max-width: 1000px; /* Maximum width of 1000px */
+  margin: 20px auto 40px;
+  
+}
+
+.VolunteerEditior h4 {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Nanum Pen Script";
+}
+
+
+.VolunteerEditior .input_box{
+  padding-top: 20px;
+}
+
+.VolunteerEditior .input_date {
+ width: 40%;
+padding-top: 10px;
+padding-bottom: 10px;
+padding-left: 20px;
+padding-right: 20px;
+text-align: start;
+
+cursor: pointer;
+font-family: "Nanum Pen Script";
+font-size: 20px;
+}
+
+.VolunteerEditior .category_list_wrapper {
+  display: grid;
+  grid-template-columns: repeat(6,auto);
+  gap: 2%;
+}
+
+
+.loc,
+.con{
+  font-family: "Nanum Pen Script";
+  font-size: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  resize: vertical;
+
+  border: none;
+  border-radius: 5px;
+  background-color: #ececec;
+  padding: 20px;
+  
+
+}
+.detail {
+  font-family: "Nanum Pen Script";
+  font-size: 20px;
+  box-sizing: border-box;
+  width: 100%;
+
+  resize: vertical;
+
+  border: none;
+  border-radius: 5px;
+  background-color: #ececec;
+  min-height: 300px;
+  padding: 20px;
+
+
+}
+
+.VolunteerEditior .control_box{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  font-family: "Nanum Pen Script";
+  font-size: 18px;
+}
+
+
+
+/* CategoryItem */
+.CategoryItem {
+  cursor: pointer;
+
+  border-radius: 5px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  display: flex;
+  flex-direction: column;
+  /* 원래는 가로로 되는데 그냥 세로로 유지되게 만들어서, 사진과 그림 수직 유지*/
+  justify-content: center;
+  align-items: center;
+} 
+
+.CategoryItem img{
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+.CategoryItem span{
+  font-size: 20px;
+  font-family:"Nanum Pen Script" ;
+}
+
+.CategoryItem_off{
+  background-color: #ececec;
+}
+
+.CategoryItem_on_1{
+  background-color: #64c964;
+  color: white;
+}
+
+.CategoryItem_on_2{
+  background-color: #FFB54C;
+  color: white;
+}
+
+.CategoryItem_on_3{
+  background-color:   #FFFF00;
+  color: white;
+}
+
+.CategoryItem_on_4{
+  background-color:  #FF4A6E;
+  color: white;
+}
+.CategoryItem_on_5{
+  background-color: #A374DB;
+  color: white;
+}
+
+.CategoryItem_on_6{
+  background-color: #000080;
+  color: white;
+}
 

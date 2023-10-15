@@ -1,10 +1,13 @@
-const New =() =>{
-    return (
-        <div>
-            <h1>New</h1>
-            <p>이곳은 New 입니다.</p>
-        </div>
-    )
-}
+import VolunteerEditor from "../components/VolunteerEditor";
+
+const New = () => {
+
+  return (
+    <div>
+      <VolunteerEditor />
+
+    </div>
+  );
+};
 
 export default New;

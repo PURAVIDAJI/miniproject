@@ -12,15 +12,15 @@ const LikeCard = (props) => {
   const dispatch = useDispatch();
 
   const {
-    product: {coffeeBrand, coffeeId, coffeeImg, coffeeInfo, coffeeName, coffeePrice},
+    product: { coffeeBrand, coffeeId, coffeeImg, coffeeInfo, coffeeName, coffeePrice },
   } = props;
-  
+
   console.log(coffeeBrand);
 
   //가격에 정규식 붙이는 표현
   const coffee_price = coffeePrice
-  .toString()
-  .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+    .toString()
+    .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 
   // 좋아요 추가는 메인/디테일 에서
   // => 하트 만들기!

@@ -1,12 +1,12 @@
 import "./loginform.css"
 
-const Loginform =() =>{
+const Loginform = () => {
     return (
         <div className="cover">
             <h1>Login</h1>
-            <input type="text" placeholder="username"/>
-            <input type="password" placeholder="password"/>
-            
+            <input type="text" placeholder="username" />
+            <input type="password" placeholder="password" />
+
             <div className="login-btn">Login</div>
 
             <p className="text"> SNS계정으로 로그인하기 </p>
