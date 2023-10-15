@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useContext, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 
 import Header from './Header';
 import MyButton from "./MyButton";
@@ -44,7 +44,7 @@ const getStringDate = (date) => {
     return date.toISOString().slice(0, 10);
 }
 
-const VolunteerEditor = () => {
+const VolunteerEditor = ({isEdit,originData}) => {
 
     const locRef = useRef();
     const conRef = useRef();
@@ -58,7 +58,7 @@ const VolunteerEditor = () => {
     const [category, setCategory] = useState(1);
     const [date, setDate] = useState(getStringDate(new Date()));
 
-    const { onCreate } = useContext(VolunteerDispatchContext);
+    const { onCreate,onEdit } = useContext(VolunteerDispatchContext);
 
     const handleClickCate = (category) => {
         setCategory(category);
@@ -70,8 +70,7 @@ const VolunteerEditor = () => {
         if (location.length < 1) {
             locRef.current.focus();
             return;
-        }
-        if (content.length < 1 || content.length > 20) {
+        }if (content.length < 1 || content.length > 20) {
             conRef.current.focus();
             return;
         }
@@ -79,10 +78,30 @@ const VolunteerEditor = () => {
             detailRef.current.focus();
             return;
         }
-        onCreate(date, content, category, location);
+
+        if(window.confirm(isEdit? "글을 수정하시겠습니까?" : "새로운 봉사 모집글을 작성하시겠습니까?")){
+            if(!isEdit){
+                onCreate(date, content, category,location);
+            }else{
+                onEdit(originData.id, date, content, category, location)
+            }
+        }
+        
         navigate('/', { replace: true });
-        //replace:true 이해안됨.
+        //replace:true 뒤로가기로 이페이지로 돌아오지 못하게 하는 것
     };
+
+    useEffect(()=>{
+        if(isEdit){
+            setDate(getStringDate(new Date(parseInt(originData.date))));
+            setCategory(originData.category);
+            setLocation(originData.location || "");
+            setContent(originData.content || "");
+            setDetailCon(originData.detailCon || "");
+        }
+        // 아무것도 안썼을 때를 대비해서 빈문자열로 초기화해서 
+        //undefined가 안되도록 만들어야 함
+    },[isEdit,originData])
 
 
 
@@ -94,7 +113,7 @@ const VolunteerEditor = () => {
     return (
         <div className="VolunteerEditior">
             <Header
-                headText={'새 봉사글 작성하기'}
+                headText={isEdit? '봉사글 수정하기':'새 봉사글 작성하기'}
                 leftChild={
                     <MyButton
                         text={"<뒤로가기"}

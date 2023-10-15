@@ -63,6 +63,7 @@ const VolunteerList = ({ VolunteerList }) => {
             }
             return true;
         };
+        
 
         const compare = (a, b) => {
             if (sortType === 'latest') {

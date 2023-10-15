@@ -17,8 +17,8 @@ const Routing = () => {
           {/* path에 아무것도 없을 때는 Home페이지로 */}
           <Route path="/introduce" element={<Introduce />} />
           <Route path="/new" element={<New />} />
-          <Route path="/edit" element={<Edit />} />
-          <Route path="/detail" element={<Detail />} />
+          <Route path="/edit/:id" element={<Edit />} />
+          <Route path="/detail/:s" element={<Detail />} />
           <Route path="/login" element={<LogIn />} />
         </Routes>
       </div>
