@@ -99,6 +99,14 @@ const Detail = () => {
                             <p>{data.location}</p>
                         </div>
                     </section>
+                    <section>
+                        <h4>상세내용</h4>
+                        <div className="volunteer_detail_wrapper">
+                            <p>{data.detail}</p>
+                        </div>
+                    </section>
+
+
                 </article>
 
             </div>

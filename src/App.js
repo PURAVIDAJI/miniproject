@@ -49,6 +49,7 @@ const dummyData = [
     content: "첫번째 봉사활동",
     date: 1697163411272,
     location: "상록보육원",
+    detail : "작성하시오.작성하시오.작성하시오.작성하시오.작성하시오.작성하시오.작성하시오.",
     
 
   },
@@ -58,6 +59,7 @@ const dummyData = [
     content: "두번째 봉사활동",
     date: 1697163411280,
     location: "가평유기동물보호소",
+    detail : "작성하시오.작성하시오.작성하시오.작성하시오.작성하시오.작성하시오.작성하시오.",
 
   },
   {
@@ -66,6 +68,7 @@ const dummyData = [
     content: "세번째 봉사활동",
     date: 1697163411290,
     location: "종로구 평생교육센터",
+    detail : "작성하시오.작성하시오.작성하시오.작성하시오.작성하시오.작성하시오.작성하시오.",
 
   },
   {
@@ -74,6 +77,7 @@ const dummyData = [
     content: "네번째 봉사활동",
     date: 1697163411297,
     location: "노들섬",
+    detail : "작성하시오.작성하시오.작성하시오.작성하시오.작성하시오.작성하시오.작성하시오.",
 
   },
   {
@@ -82,6 +86,7 @@ const dummyData = [
     content: "방과 후 활동 보조 선생님",
     date: 1697163411299,
     location: "구룡초등학교",
+    detail : "작성하시오.작성하시오.작성하시오.작성하시오.작성하시오.작성하시오.작성하시오.",
 
   },
   {
@@ -90,6 +95,7 @@ const dummyData = [
     content: "강릉 안인해변 쓰레기 수거활동",
     date: 1697163411299,
     location: "강릉 안인해변",
+    detail : "작성하시오.작성하시오.작성하시오.작성하시오.작성하시오.작성하시오.작성하시오.",
 
   },
   {
@@ -98,6 +104,7 @@ const dummyData = [
     content: "급식배급 보조활동",
     date: 1697163411299,
     location: "성동구 노인요양센터",
+    detail : "작성하시오.작성하시오.작성하시오.작성하시오.작성하시오.작성하시오.작성하시오.",
 
   }
 ]
@@ -109,10 +116,10 @@ const App = () => {
   console.log(new Date().getTime());
 
 
-  const dataId = useRef(0);
+  const dataId = useRef(8);
 
   //create
-  const onCreate = (date, content, category, location) => {
+  const onCreate = (date, content, category, location,detail) => {
     dispatch({
       type: "CREATE", data: {
         id: dataId.current,
@@ -120,6 +127,7 @@ const App = () => {
         content,
         category,
         location,
+        detail,
       },
     });
     dataId.current += 1;
@@ -130,7 +138,7 @@ const App = () => {
     dispatch({ type: "REMOVE", targetId });
   }
   //Edit
-  const onEdit = (targetId, date, content, category, location) => {
+  const onEdit = (targetId, date, content, category, location,detail) => {
     dispatch({
       type: "EDIT",
       data: {
@@ -139,6 +147,7 @@ const App = () => {
         content,
         category,
         location,
+        detail,
       },
     });
   };

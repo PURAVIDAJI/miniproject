@@ -5,7 +5,7 @@ import Header from './Header';
 import MyButton from "./MyButton";
 import CategoryItem from "./CategoryItem";
 import { VolunteerDispatchContext } from "../App";
-import {categoryList} from '../util/category.js';
+import { categoryList } from '../util/category.js';
 
 
 
@@ -14,21 +14,24 @@ const getStringDate = (date) => {
     return date.toISOString().slice(0, 10);
 }
 
-const VolunteerEditor = ({isEdit,originData}) => {
+const VolunteerEditor = ({ isEdit, originData }) => {
 
     const locRef = useRef();
     const conRef = useRef();
     const detailRef = useRef();
+    const imageInputRef = useRef();
+
 
 
     const [location, setLocation] = useState("");
     const [content, setContent] = useState("");
     const [detailCon, setDetailCon] = useState("");
+    const [imageSrc, setImageSrc] = useState(null);
 
     const [category, setCategory] = useState(1);
     const [date, setDate] = useState(getStringDate(new Date()));
 
-    const { onCreate,onEdit } = useContext(VolunteerDispatchContext);
+    const { onCreate, onEdit } = useContext(VolunteerDispatchContext);
 
     const handleClickCate = (category) => {
         setCategory(category);
@@ -40,7 +43,7 @@ const VolunteerEditor = ({isEdit,originData}) => {
         if (location.length < 1) {
             locRef.current.focus();
             return;
-        }if (content.length < 1 || content.length > 20) {
+        } if (content.length < 1 || content.length > 20) {
             conRef.current.focus();
             return;
         }
@@ -49,29 +52,29 @@ const VolunteerEditor = ({isEdit,originData}) => {
             return;
         }
 
-        if(window.confirm(isEdit? "글을 수정하시겠습니까?" : "새로운 봉사 모집글을 작성하시겠습니까?")){
-            if(!isEdit){
-                onCreate(date, content, category,location);
-            }else{
-                onEdit(originData.id, date, content, category, location)
+        if (window.confirm(isEdit ? "글을 수정하시겠습니까?" : "새로운 봉사 모집글을 작성하시겠습니까?")) {
+            if (!isEdit) {
+                onCreate(date, content, category, location, detailCon,);
+            } else {
+                onEdit(originData.id, date, content, category, location, detailCon,);
             }
         }
-        
+
         navigate('/', { replace: true });
         //replace:true 뒤로가기로 이페이지로 돌아오지 못하게 하는 것
     };
 
-    useEffect(()=>{
-        if(isEdit){
+    useEffect(() => {
+        if (isEdit) {
             setDate(getStringDate(new Date(parseInt(originData.date))));
             setCategory(originData.category);
             setLocation(originData.location || "");
             setContent(originData.content || "");
-            setDetailCon(originData.detailCon || "");
+            setDetailCon(originData.detail || "");
         }
         // 아무것도 안썼을 때를 대비해서 빈문자열로 초기화해서 
         //undefined가 안되도록 만들어야 함
-    },[isEdit,originData])
+    }, [isEdit, originData]);
 
 
 
@@ -79,11 +82,27 @@ const VolunteerEditor = ({isEdit,originData}) => {
     const goOut = () => {
         alert("작성 중인 글을 나가시겠습니까?");
         navigate(-1);
+    };
+
+    const onUpload = (e) => {
+
+        const file = e.target.files?.[0];
+        if(file){
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+
+        //onloadend -> 파일 읽기 작업이 완료되면 실행될 함수를 설정하는 부분
+        reader.onloadend = () => {
+            setImageSrc(reader.result);
+        };
     }
+
+    };
+
     return (
-        <div className="VolunteerEditior">
+        <div className="VolunteerEditor">
             <Header
-                headText={isEdit? '봉사글 수정하기':'새 봉사글 작성하기'}
+                headText={isEdit ? '봉사글 수정하기' : '새 봉사글 작성하기'}
                 leftChild={
                     <MyButton
                         text={"<뒤로가기"}
@@ -150,6 +169,27 @@ const VolunteerEditor = ({isEdit,originData}) => {
                             placeholder="30자 이상 작성해주세요."
                         />
 
+                    </div>
+                </section>
+                <section>
+                    <h4> 이미지 업로드</h4>
+                    <div className="image-upload-wrapper">
+                        <div className="image-preview">
+                            {imageSrc ? (
+                                <img src={imageSrc} alt="Preview" />
+                            ) : (
+                                <img src="/images/upload.png" alt="Default" className="default-image" />
+                            )}
+                        </div>
+                        <div className="upload-button">
+                            <input
+                                type="file"
+                                accept="image/*"
+                                onChange={onUpload}
+                                ref={imageInputRef}
+                            />
+                            <label onClick={() => imageInputRef.current.click()}>이미지 업로드</label>
+                        </div>
                     </div>
                 </section>
                 <section>
