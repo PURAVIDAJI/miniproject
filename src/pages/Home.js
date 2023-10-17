@@ -8,6 +8,8 @@ import VolunteerList from '../components/VolunterrList';
 const Home = () => {
 
     const volunteerList = useContext(VolunteerStateContext);
+    
+    
     const [data, setData] = useState([]);
     useEffect(() => {
         setData(volunteerList);

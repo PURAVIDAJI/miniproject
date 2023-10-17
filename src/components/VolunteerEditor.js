@@ -54,9 +54,9 @@ const VolunteerEditor = ({ isEdit, originData }) => {
 
         if (window.confirm(isEdit ? "글을 수정하시겠습니까?" : "새로운 봉사 모집글을 작성하시겠습니까?")) {
             if (!isEdit) {
-                onCreate(date, content, category, location, detailCon,);
+                onCreate(date, content, category, location, detailCon,imageSrc);
             } else {
-                onEdit(originData.id, date, content, category, location, detailCon,);
+                onEdit(originData.id, date, content, category, location, detailCon,imageSrc);
             }
         }
 

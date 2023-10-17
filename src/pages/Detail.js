@@ -4,6 +4,7 @@ import { VolunteerStateContext } from "../App";
 import Header from "../components/Header";
 import MyButton from "../components/MyButton";
 import { categoryList } from "../util/category";
+import Parser from 'html-react-parser';
 
 const Detail = () => {
     
@@ -67,7 +68,16 @@ const Detail = () => {
                 }
                 />
                 <article>
-                    <section>
+                    <section className="volunteer_img">
+                
+                        <div className="volunteer_image_wrapper">
+
+                            <img src = {data.image}/>
+
+                        </div>
+
+                    </section>
+                    <section className="volunteer_info">
                         <h4>봉사 카테고리</h4>
                         <div className={[
                             "category_img_wrapper",
@@ -80,34 +90,30 @@ const Detail = () => {
 
                             </div>            
                         </div>
-                    </section>
-                    <section>
                         <h4>봉사 일자</h4>
                         <div className="volunteer_date_wrapper">
                             <p>{strDate}</p>
                         </div>
-                    </section>
-                    <section>
+                    
                         <h4>봉사 제목</h4>
                         <div className="volunteer_con_wrapper">
                             <p>{data.content}</p>
                         </div>
-                    </section>
-                    <section>
                         <h4>봉사 장소</h4>
                         <div className="volunteer_loc_wrapper">
                             <p>{data.location}</p>
                         </div>
                     </section>
-                    <section>
+                </article>
+                    <section className="volunteer_detail">
                         <h4>상세내용</h4>
                         <div className="volunteer_detail_wrapper">
-                            <p>{data.detail}</p>
+                            <p>{Parser(data.detail)}</p>
                         </div>
                     </section>
 
 
-                </article>
+                
 
             </div>
         );

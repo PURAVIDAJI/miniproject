@@ -337,6 +337,8 @@ font-size: 20px;
   font-size: 18px;
 }
 
+
+
 .image-upload-wrapper {
   background-color: #ececec;
   width: 50%;
@@ -470,25 +472,49 @@ input[type="file"] {
 
 /* Detail */
 
+
 .DetailPage{
 
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
+ 
 
 }
 
-.DetailPage section{
-  width: 100%;
-  margin-bottom: 10px;
-
+.DetailPage article{
+  margin-top: 50px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-
 }
 
+.volunteer_img {
+  width: 60%;
+  padding-top: 58px;
+  
+  text-align: center;
+  /* display: inline-block; */
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+  
+}
+.volunteer_info {
+  width: 40%;
+  display: inline-block;
+}
+
+.volunteer_detail{
+  margin-top: 50px;
+  border-top: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
+  padding-bottom: 20px;
+  margin-bottom: 50px;
+}
+
+
+.volunteer_img img{
+  border-radius:5px ;
+}
 .DetailPage h4{
   margin-top: 20px;
   font-size: 25px;
@@ -498,8 +524,8 @@ input[type="file"] {
 
 .DetailPage .category_img_wrapper {
   background-image: #ececec;
-  width: 250px;
-  height: 250px;
+  width: 216px;
+  height: 216px;
   
   border-radius: 5px;
   display: flex;
@@ -532,8 +558,8 @@ input[type="file"] {
   background-color: #000080;
 }
 .DetailPage .img{
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
 }
 
 .DetailPage .category_description{
@@ -544,7 +570,9 @@ input[type="file"] {
 
 .DetailPage .volunteer_date_wrapper,
  .volunteer_con_wrapper,
- .volunteer_loc_wrapper{
+ .volunteer_loc_wrapper,
+ .volunteer_detail_wrapper
+ {
   width: 100%;
 
   background-color: #ececec;
@@ -556,7 +584,8 @@ input[type="file"] {
 }
 .DetailPage .volunteer_date_wrapper p,
 .volunteer_loc_wrapper p,
-.volunteer_con_wrapper p {
+.volunteer_con_wrapper p ,
+.volunteer_detail_wrapper p{
   
   text-align: left;
   margin: 10px;
@@ -564,4 +593,48 @@ input[type="file"] {
   font-family: "Yeon Sung";
   font-weight: 400;
   line-height: 2.5;
+}
+
+
+
+/* Sidebar.css */
+.mypage-container{
+  max-width: 1000px;
+  margin: 0 auto;
+
+}
+.sidebar {
+  
+
+  margin-top: 100px;
+  width: 200px;
+  
+  border: 1px solid #e2e2e2 ;
+  border-radius: 5px;
+  
+  
+  top: 0;
+  left: 0;
+  padding: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+ 
+  
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e2e2e2;
+  
+}
+
+.sidebar a {
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+  font-family:"Nanum Pen Script" ;
+  
 }
