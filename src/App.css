@@ -598,15 +598,15 @@ input[type="file"] {
 
 
 /* Sidebar.css */
-.mypage-container{
+/* .mypage-container{
   max-width: 1000px;
   margin: 0 auto;
 
-}
+} */
 .sidebar {
   
 
-  margin-top: 100px;
+  
   width: 200px;
   
   border: 1px solid #e2e2e2 ;
@@ -638,3 +638,54 @@ input[type="file"] {
   font-family:"Nanum Pen Script" ;
   
 }
+
+
+/* Cart */
+.cart_content_wrapper{
+  
+  max-width: 1000px;
+  margin: 80px auto;
+  display: flex;
+}
+.cart_clickList{
+  width: 80%;
+}
+
+.cart-item {
+
+  
+
+  border: none;
+  border-radius: 5px;
+  background-color: #ececec;
+  padding: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 10px;
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+}
+
+
+.cart_clickList ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cart-item div{
+  flex: 1;
+  margin: 5px;
+  text-align: left;
+}
+
+
+/* .cart-item div:first-child {
+  text-align: left;
+}
+
+.cart-item div:last-child {
+  text-align: right;
+} */
